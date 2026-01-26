@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IRON PLATFORM — Powerlifting Gym</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- TU CSS -->
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header class="container-fluid topbar d-flex justify-content-center">
+    <p class="mb-0 p-2">📞 Contacto: +34 978 600 999 | 🏋️‍♂️ Open Gym + Power Zone</p>
+  </header>
+
+  <!-- NAV -->
+  <nav id="menu" class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-lightning-charge-fill me-2"></i>IRON PLATFORM
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mi-menu"
+        aria-controls="mi-menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mi-menu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Zona Power</a></li>
+          <li class="nav-item"><a class="nav-link" href="#equipo">Entrenadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+
+        <!-- mini form -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="email" placeholder="Tu email" aria-label="email">
+          <button class="btn btn-outline-light" type="submit">¡Quiero PR!</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero d-flex align-items-center">
+    <div class="container text-center text-lg-start">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold mb-3">
+            Más fuerza. Más kilos. <span class="accent">Más PR.</span>
+          </h1>
+          <p class="lead mb-4">
+            Bienvenido a <b>IRON PLATFORM</b>: plataforma oficial para
+            <b>Squat / Bench / Deadlift</b>, con racks, discos calibrados y zona de técnica.
+          </p>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-accent btn-lg" href="#servicios">
+              <i class="bi bi-trophy-fill me-2"></i>Ver la Zona Power
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="./tarifas.html">
+              <i class="bi bi-cash-coin me-2"></i>Ver Tarifas
+            </a>
+          </div>
+
+          <div class="mt-4 d-flex gap-4 flex-wrap stats">
+            <div><span class="num">7</span><span class="txt">Racks</span></div>
+            <div><span class="num">24/7</span><span class="txt">Open Gym</span></div>
+            <div><span class="num">100%</span><span class="txt">Power Vibes</span></div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-4 mt-lg-0">
+          <div class="card card-hero shadow-lg">
+            <div class="card-body">
+              <h2 class="h4 fw-bold mb-2">🔥 Reto del Mes</h2>
+              <p class="mb-3 text-muted">
+                Técnica limpia + progresión: sube tu total con un bloque de 4 semanas.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Semana 1-2: volumen</li>
+                <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Semana 3: intensidad</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Semana 4: test PR</li>
+              </ul>
+              <a href="#contacto" class="btn btn-dark w-100 mt-3">Apúntame al bloque</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Zona Power</h2>
+        <p class="text-muted mb-0">Todo lo que un powerlifter pide: barra, discos y progresión.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm card-service">
+            <div class="card-body d-flex gap-3">
+              <div class="icon-box"><i class="bi bi-bullseye"></i></div>
+              <div>
+                <h3 class="h5 fw-bold mb-1">Plataformas & Técnica</h3>
+                <p class="mb-0 text-muted">Plataformas, safety bars y trabajo de brace, depth y setup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm card-service">
+            <div class="card-body d-flex gap-3">
+              <div class="icon-box"><i class="bi bi-lightning-charge"></i></div>
+              <div>
+                <h3 class="h5 fw-bold mb-1">Programación</h3>
+                <p class="mb-0 text-muted">Bloques de fuerza, RPE/RIR y control de volumen e intensidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm card-service">
+            <div class="card-body d-flex gap-3">
+              <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <h3 class="h5 fw-bold mb-1">Prevención & Movilidad</h3>
+                <p class="mb-0 text-muted">Hombro, cadera, tobillo y core para levantar pesado seguro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm card-service">
+            <div class="card-body d-flex gap-3">
+              <div class="icon-box"><i class="bi bi-people"></i></div>
+              <div>
+                <h3 class="h5 fw-bold mb-1">Comunidad</h3>
+                <p class="mb-0 text-muted">Sparring, spotters, y días de “mock meet” para subir total.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="py-5 bg-soft">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-2">Entrenadores con mentalidad de plataforma</h2>
+          <p class="text-muted mb-3">
+            Aquí no vienes a “hacer cardio”: vienes a <b>subir kilos</b> con técnica, progresión y cabeza.
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-lg me-2"></i>Corrección de sentadilla (brace + depth)</li>
+            <li class="mb-2"><i class="bi bi-check-lg me-2"></i>Banca: leg drive, arco y trayectoria</li>
+            <li><i class="bi bi-check-lg me-2"></i>Peso muerto: wedge, tensión y lockout</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 shadow-sm bg-white">
+            <h3 class="h5 fw-bold">Mock Meet — cada último sábado</h3>
+            <p class="text-muted mb-3">3 intentos por lift, juez y ambiente de competición.</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <span class="badge bg-dark">SQ</span>
+              <span class="badge bg-dark">BP</span>
+              <span class="badge bg-dark">DL</span>
+              <span class="badge bg-accent">TOTAL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Contacto</h2>
+        <p class="text-muted mb-0">¿Quieres subir tu total? Escríbenos y te metemos en un bloque.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Iván">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="ivan@ejemplo.es">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Objetivo</label>
+                    <select class="form-select">
+                      <option>Subir mi sentadilla</option>
+                      <option>Mejorar banca</option>
+                      <option>Más kilos en peso muerto</option>
+                      <option>Subir mi total (SQ+BP+DL)</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" rows="4" placeholder="Quiero un bloque de 4-8 semanas y test de PR..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-accent w-100 btn-lg" type="submit">
+                      <i class="bi bi-send-fill me-2"></i>Enviar
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <p class="text-muted small mt-3 mb-0">
+                Tip: si pones tu RM aproximado, te ajustamos el bloque por RPE 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-center text-light">
+    <div class="container">
+      <p class="mb-2">IRON PLATFORM &copy; 2026 — Powerlifting Gym</p>
+      <div class="d-flex justify-content-center gap-3 fs-4">
+        <a class="link-light" href="#"><i class="bi bi-instagram"></i></a>
+        <a class="link-light" href="#"><i class="bi bi-tiktok"></i></a>
+        <a class="link-light" href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
