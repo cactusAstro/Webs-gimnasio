@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RyFeta 🐴💖 | Pony Gaming</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink1: #ff4fd8;
+            --pink2: #ff7ac8;
+            --pink3: #ffd1f1;
+            --dark: #160018;
+            --glass: rgba(255, 255, 255, .14);
+            --border: rgba(255, 255, 255, .22);
+        }
+
+        body {
+            background: radial-gradient(1200px 800px at 20% 10%, #ffb6f6 0%, transparent 60%),
+                radial-gradient(900px 700px at 80% 0%, #ffd1f1 0%, transparent 55%),
+                linear-gradient(180deg, #120013 0%, #1b001e 40%, #120013 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(10, 0, 12, .55);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .4rem .75rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(255, 79, 216, .25), rgba(255, 122, 200, .18));
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: 0 10px 30px rgba(255, 79, 216, .18);
+        }
+
+        .hero {
+            position: relative;
+            padding: 6.5rem 0 3rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -200px -200px auto -200px;
+            height: 520px;
+            background: linear-gradient(135deg, rgba(255, 79, 216, .55), rgba(255, 122, 200, .25), rgba(255, 209, 241, .12));
+            filter: blur(30px);
+            opacity: .75;
+            z-index: 0;
+            border-radius: 80px;
+            transform: rotate(-2deg);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, .35);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .45rem .85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .16);
+            font-size: .92rem;
+        }
+
+        .btn-pink {
+            border: 0;
+            background: linear-gradient(90deg, var(--pink1), var(--pink2));
+            color: white;
+            box-shadow: 0 16px 35px rgba(255, 79, 216, .25);
+        }
+
+        .btn-pink:hover {
+            filter: brightness(1.06);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .16);
+            color: #fff;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, .12);
+        }
+
+        .section-title {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .card-pink {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .06));
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 22px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .35);
+            height: 100%;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .card-pink:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 70px rgba(0, 0, 0, .45);
+        }
+
+        .icon-bubble {
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(255, 79, 216, .35), rgba(255, 209, 241, .18));
+            border: 1px solid rgba(255, 255, 255, .18);
+        }
+
+        .carousel-item {
+            height: 360px;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+
+        .slide-bg {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.4rem;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .slide-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .00) 0%, rgba(0, 0, 0, .68) 85%);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: .25rem .6rem;
+            border-radius: 999px;
+            background: rgba(255, 79, 216, .22);
+            border: 1px solid rgba(255, 255, 255, .14);
+            font-size: .85rem;
+        }
+
+        .gallery img {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, .35);
+            transition: transform .18s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(10, 0, 12, .45);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Smooth anchor */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container py-2">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="brand-badge">
+                    <i class="bi bi-stars"></i>
+                    RyFeta <span class="opacity-75">🐴💖</span>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto gap-2 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carrusel">Highlights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#comunidad">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0 d-grid d-lg-block">
+                    <a class="btn btn-pink rounded-pill px-4" href="#suscribete">
+                        <i class="bi bi-youtube me-2"></i>Suscríbete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="inicio">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="pill mb-3">
+                        <i class="bi bi-controller"></i>
+                        Pony games + caballos + risas
+                    </div>
+
+                    <h1 class="display-5 fw-bold lh-1 mb-3">
+                        Bienvenido al universo <span
+                            style="background:linear-gradient(90deg,var(--pink1),var(--pink2)); -webkit-background-clip:text; background-clip:text; color:transparent;">RyFeta</span>
+                    </h1>
+
+                    <p class="lead opacity-75 mb-4">
+                        Una web rosa y brillante para un youtuber de <b>juegos de caballos y ponys</b>.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-pink rounded-pill px-4" href="#carrusel">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>Ver highlights
+                        </a>
+                        <a class="btn btn-ghost rounded-pill px-4" href="#videos">
+                            <i class="bi bi-play-circle me-2"></i>Últimos videos
+                        </a>
+                        <a class="btn btn-ghost rounded-pill px-4" href="#comunidad">
+                            <i class="bi bi-people me-2"></i>Comunidad
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="glass p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <div class="fw-bold">Stats del establo</div>
+                                <div class="opacity-75 small">Oscar hijo de puta que te vas a quedar calvo</div>
+                            </div>
+                            <span class="tag">Pink mode</span>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="card-pink p-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="icon-bubble"><i class="bi bi-trophy"></i></div>
+                                        <div>
+                                            <div class="small opacity-75">Retos</div>
+                                            <div class="h5 mb-0 fw-bold">Carreras</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card-pink p-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="icon-bubble"><i class="bi bi-heart-fill"></i></div>
+                                        <div>
+                                            <div class="small opacity-75">Vibes</div>
+                                            <div class="h5 mb-0 fw-bold">Pony Love</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card-pink p-3">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                        <div>
+                                            <div class="fw-bold">Hoy toca follar a alexis</div>
+                                        </div>
+                                        <a class="btn btn-pink rounded-pill px-4" href="#suscribete">
+                                            <i class="bi bi-bell-fill me-2"></i>Activar campana
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CAROUSEL -->
+    <section class="py-5" id="carrusel">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+                <span class="pill"><i class="bi bi-images"></i>3 slides</span>
+            </div>
+
+            <div id="ryCarousel" class="carousel slide glass p-3" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#ryCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#ryCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#ryCarousel" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="slide-bg"
+                            style="background-image:url('https://i.ytimg.com/vi/q1sHtXysv5o/maxresdefault.jpg');">
+                            <div class="slide-content">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="slide-bg"
+                            style="background-image:url('https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/05/17/el-youtuber-willyrex-hace-casi-una-decada.png');">
+                            <div class="slide-content">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="slide-bg"
+                            style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvo5Tw4c88h-MGwPtqpf0ZIMM0kVQgo9eP3w&s');">
+                            <div class="slide-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#ryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#ryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS (cards) -->
+    <section class="py-5" id="videos">
+        <div class="container">
+            <div class="row align-items-end g-3 mb-3">
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-1">Últimos videos 🎬</h2>
+                    <div class="opacity-75">Plantilla lista para que metas links reales de YouTube.</div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-ghost rounded-pill px-4" href="#suscribete">
+                        <i class="bi bi-arrow-right-circle me-2"></i>Ir a suscribirme
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-pink p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-bubble"><i class="bi bi-play-fill"></i></div>
+                            <div>
+                                <div class="fw-bold">Pony Racing</div>
+                                <div class="small opacity-75">“Speedrun de establo”</div>
+                            </div>
+                        </div>
+                        <p class="opacity-75 mb-3">
+                            Carrera intensa, giros raros y un pony que se cree moto.
+                        </p>
+                        <a class="btn btn-pink rounded-pill w-100" href="#" target="_blank" rel="noopener">
+                            Ver en YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-pink p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-bubble"><i class="bi bi-rocket-takeoff"></i></div>
+                            <div>
+                                <div class="fw-bold">Retos Locos</div>
+                                <div class="small opacity-75">“Solo rosa, solo victoria”</div>
+                            </div>
+                        </div>
+                        <p class="opacity-75 mb-3">
+                            Reto con restricciones absurdas (pero divertidas).
+                        </p>
+                        <a class="btn btn-pink rounded-pill w-100" href="#" target="_blank" rel="noopener">
+                            Ver en YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-pink p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-bubble"><i class="bi bi-stars"></i></div>
+                            <div>
+                                <div class="fw-bold">Customización</div>
+                                <div class="small opacity-75">“Montura deluxe”</div>
+                            </div>
+                        </div>
+                        <p class="opacity-75 mb-3">
+                            Outfits, accesorios y configuración para ir finísimo.
+                        </p>
+                        <a class="btn btn-pink rounded-pill w-100" href="#" target="_blank" rel="noopener">
+                            Ver en YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 glass p-4">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-8">
+                        <div class="fw-bold">Tip rápido</div>
+                        <div class="opacity-75">
+                            Cambia los botones “Ver en YouTube” por los links reales del canal y listo.
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="btn btn-ghost rounded-pill px-4" href="#galeria">
+                            <i class="bi bi-grid-3x3-gap me-2"></i>Ver galería
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMMUNITY + TABLE -->
+    <section class="py-5" id="comunidad">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+                <div>
+                    <h2 class="section-title mb-1">Comunidad & “establo competitivo” 🫶</h2>
+                    <div class="opacity-75">Una tabla chula para que quede pro.</div>
+                </div>
+                <span class="pill"><i class="bi bi-bar-chart"></i>Stats</span>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card-pink p-4">
+                        <h5 class="fw-bold mb-2">¿Qué se hace aquí?</h5>
+                        <ul class="mb-0 opacity-75">
+                            <li>Retos semanales (ponys al límite 😭).</li>
+                            <li>Clips graciosos y momentos “¿por qué ha saltado ahí?”</li>
+                            <li>Recomendaciones de juegos de caballos/ponys.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card-pink p-4">
+                        <h5 class="fw-bold mb-3">Mini stats (inventadas pero quedan 🔥)</h5>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-borderless align-middle mb-0">
+                                <thead>
+                                    <tr class="opacity-75">
+                                        <th>Modo</th>
+                                        <th>Hype</th>
+                                        <th>Caos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="bi bi-trophy me
+                        -2"></i>Ranking</td>
+                                        <td>🔥🔥🔥🔥</td>
+                                        <td>💩💩💩</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-rocket-takeoff me-2"></i>Speedrun</td>
+                                        <td>🔥🔥🔥</td>
+                                        <td>💩💩💩💩</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-brush me-2"></i>Custom</td>
+                                        <td>🔥🔥🔥🔥🔥</td>
+                                        <td>💩💩</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="bi bi-people me-2"></i>Comunidad</td>
+                                        <td>🔥🔥🔥🔥</td>
+                                        <td>💩💩💩</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="py-5" id="galeria">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+                <div>
+                    <h2 class="section-title mb-1">Galería rosa 🌸</h2>
+                    <div class="opacity-75">
+                    </div>
+                </div>
+                <span class="pill"><i class="bi bi-camera me-2"></i>6 fotos</span>
+            </div>
+
+            <div class="row g-3 gallery">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Pony 1"
+                        src="https://www.protestantes.net/assets/public/entrelineas/grandes/goofy.jpg">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Pony 2"
+                        src="https://hips.hearstapps.com/hmg-prod/images/goofy-1568726558.jpg">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Horse 3"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Horse 4"
+                        src="https://wradio.com.mx/resizer/v2/7N6US7GK55KXHEMEKB2W6LZNPE.jpg?auth=78471a9ea55fb64ff59732908bdffa24771971a4b590877e0324346216ab5521&width=760&height=570&quality=70&smart=true">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Pony 5"
+                        src="https://frikanime.com/wp-content/uploads/2025/04/Goofy-and-Max-Goofy-e-hijo-Art-Scale-110-9.jpg">
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img class="img-fluid w-100" alt="Pony 6"
+                        src="https://pbs.twimg.com/media/ELguppVWsAAsjV0.jpg">
+                </div>
+            </div>
+
+            <div class="mt-4 glass p-4">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-8"></div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="btn btn-pink rounded-pill px-4" href="#suscribete">
+                            <i class="bi bi-stars me-2"></i>Ir a Suscribirme
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section class="py-5" id="suscribete">
+        <div class="container">
+            <div class="glass p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <h2 class="section-title mb-2">Suscríbete al establo 💖🐴</h2>
+                        <p class="opacity-75 mb-0">
+                            Te llegan los videos de juegos de caballos y ponys, ñigoladas, clips y polladas rosas.
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-pink btn-lg rounded-pill" href="https://www.youtube.com/@ryfeta04" target="_blank" rel="noopener">
+                                <i class="bi bi-youtube me-2"></i>Ir al canal de RyFeta
+                            </a>
+                            <a class="btn btn-ghost btn-lg rounded-pill" href="#inicio">
+                                <i class="bi bi-arrow-up-circle me-2"></i>Volver arriba
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="d-flex flex-wrap gap-3 align-items-center justify-content-between">
+                <div class="opacity-75">
+                    <b>RyFeta</b> 🐴💖 — Web puta rosas.
+                </div>
+                <div class="d-flex gap-3">
+                    <a class="text-decoration-none text-white opacity-75" href="#inicio"><i class="bi bi-house"></i></a>
+                    <a class="text-decoration-none text-white opacity-75" href="#videos"><i
+                            class="bi bi-play-circle"></i></a>
+                    <a class="text-decoration-none text-white opacity-75" href="#galeria"><i
+                            class="bi bi-grid-3x3-gap"></i></a>
+                </div>
+            </div>
+            <hr class="border border-white border-opacity-10 my-3">
+            <div class="small opacity-75">
+                © <span id="year"></span> RyFeta
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Year -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
